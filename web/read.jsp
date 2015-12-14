@@ -4,14 +4,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customer List</title>
+        <title>JSP Page</title>
         <link rel="stylesheet" type="text/css" href="./stylesheet.css">
     </head>
+    
+    <% String table = (String) request.getAttribute("table"); %>
+    
     <body>
-        <div class="wrap">
-            
-            <%@ include file="includes/header.jsp" %>
-                <div class="box">
+        <h1>Customer</h1>
+        <div class="box">
                 <form name="searchForm" action="search" method="get">
             
             <input type="text" name="searchVal" value=""/>
@@ -21,19 +22,14 @@
         </form>
                 </div>
             <%@ include file="includes/menu.jsp" %>
-            
-            
-            
-            <div class="main">  
-                <h1>Customer Database</h1>
-
-                <a href="read">View All Customer</a>
-                <br><br>
-                <a href="search.jsp">Search </a>
-            </div>  
-            
-        <%@ include file="includes/footer.jsp" %>   
+            <br><br>
+        <%= table %>
         
-        </div>
+        <br><br>
+        
+        
+        
+        
+        
     </body>
 </html>
